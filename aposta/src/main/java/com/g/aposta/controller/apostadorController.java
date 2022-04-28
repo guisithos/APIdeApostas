@@ -1,5 +1,7 @@
-package com.g.aposta;
+package com.g.aposta.controller;
 
+import com.g.aposta.model.apostador;
+import com.g.aposta.model.dto.apostadorIn;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,9 +12,9 @@ import static org.springframework.http.HttpStatus.CREATED;
 @RestController
 public class apostadorController {
 
-    private final apostadorRepository apostadorRepository;
+    private final com.g.aposta.repository.apostadorRepository apostadorRepository;
 
-    public apostadorController(com.g.aposta.apostadorRepository apostadorRepository) {
+    public apostadorController(com.g.aposta.repository.apostadorRepository apostadorRepository) {
         this.apostadorRepository = apostadorRepository;
     }
 

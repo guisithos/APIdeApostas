@@ -1,4 +1,6 @@
-package com.g.aposta;
+package com.g.aposta.model.dto;
+
+import com.g.aposta.model.apostador;
 
 public class apostadorIn {
 
