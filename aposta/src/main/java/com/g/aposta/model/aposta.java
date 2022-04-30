@@ -19,7 +19,7 @@ public class aposta {
     private String numeroAposta;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "idApostador", nullable = false)
     private apostador apostador;
 
 }

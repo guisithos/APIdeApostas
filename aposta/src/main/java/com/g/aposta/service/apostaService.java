@@ -4,11 +4,14 @@ import com.g.aposta.model.aposta;
 import com.g.aposta.model.apostador;
 import com.g.aposta.model.dto.apostaIn;
 import com.g.aposta.model.dto.apostaOut;
+import com.g.aposta.model.dto.apostasOut;
 import com.g.aposta.repository.apostaRepository;
 import com.g.aposta.repository.apostadorRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -26,5 +29,19 @@ public class apostaService {
         apostaRepository.save(aposta);
 
         return new apostaOut(numAposta, apostador.get().getNome(), apostador.get().getEmail());
+    }
+
+    public List<apostasOut> buscaApostasPorIDApostador(Long idApostador) {
+        List<aposta> apostaList = apostaRepository.findByIDApostador(idApostador);
+        List<apostasOut> list = new ArrayList<>();
+
+        apostaList.forEach(apostas -> {
+            apostasOut apostasOut = new apostasOut();
+            apostasOut.setIdApostador(apostas.getApostador().getId());
+            apostasOut.setNumeroAposta(apostas.getNumeroAposta());
+            list.add(apostasOut);
+        });
+
+        return list;
     }
 }
