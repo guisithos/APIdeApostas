@@ -8,8 +8,7 @@ e também de um número de aposta, onde é gerado um num aleatorio.
 As informacoes sao armazenadas em banco SQL H2 in-memory, e ficam 
 disponiveis em localhost.
 
-API realizada como forma de estudo e podendo servir de base podendo
-servir de base a outras. 
+API realizada como forma de estudo e podendo servir de base para o desenvolvimento de outras APIs
 
 
 
